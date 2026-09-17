@@ -178,13 +178,30 @@
     return letras;
   }
 
+  // Lo de «una sola vez» va con IntersectionObserver a propósito: un
+  // ScrollTrigger con once:true NO dispara si el elemento ya está en pantalla
+  // cuando se crea, y el titular se queda sin aparecer.
+  function alEntrar(el, hacer, margen) {
+    if (!('IntersectionObserver' in window)) { hacer(); return; }
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        hacer();
+      });
+    }, { rootMargin: margen || '0px 0px -8% 0px' });
+    io.observe(el);
+  }
+
   if (motion) {
     $$('[data-char]').forEach(function (el) {
       var letras = partir(el);
-      gsap.set(letras, { yPercent: 60, opacity: 0 });
+      // `y: 0` explícito: GSAP leería cualquier translate3d heredado del CSS
+      // como píxeles y las letras se quedarían clavadas abajo.
+      gsap.set(letras, { y: 0, yPercent: 60, opacity: 0 });
       var comun = { yPercent: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.016 };
       if (el.closest('.hero')) gsap.to(letras, Object.assign({ delay: 0.15 }, comun));
-      else gsap.to(letras, Object.assign({ scrollTrigger: { trigger: el, start: 'top 88%', once: true } }, comun));
+      else alEntrar(el, function () { gsap.to(letras, comun); });
     });
   }
 
@@ -198,12 +215,13 @@
     ].forEach(function (par) {
       $$(par[0]).forEach(function (el, i) {
         var enHero = !!el.closest('.hero');
-        gsap.to(el, {
+        var ajustes = {
           opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
           startAt: { y: par[1] },
-          delay: enHero ? 0.5 + i * 0.08 : (i % 4) * 0.05,
-          scrollTrigger: enHero ? null : { trigger: el, start: 'top 92%', once: true }
-        });
+          delay: enHero ? 0.5 + i * 0.08 : (i % 4) * 0.05
+        };
+        if (enHero) gsap.to(el, ajustes);
+        else alEntrar(el, function () { gsap.to(el, ajustes); });
       });
     });
   }
