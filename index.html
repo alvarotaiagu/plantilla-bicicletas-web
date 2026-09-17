@@ -1,0 +1,484 @@
+<!doctype html>
+<!--
+  ============================================================================
+  SITIO DE DEMOSTRACIÓN. «Sete Curvas, bicicletas y taller» es un negocio
+  FICTICIO, inventado para esta plantilla. Nombre, dirección, teléfono,
+  horarios, precios, modelos y personas son datos de muestra y no
+  corresponden a ningún negocio real. No indexar, no citar como fuente.
+  Concepto: «Perfil de etapa».
+  ============================================================================
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sete Curvas · bicicletas y taller (demostración)</title>
+<meta name="description" content="Plantilla de demostración para tienda y taller de bicicletas. Sete Curvas es un negocio ficticio: taller con cita, seis modelos, alquiler y salidas de club.">
+<meta name="theme-color" content="#EFEDE7">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sete Curvas · bicicletas y taller (sitio de demostración)">
+<meta property="og:description" content="Negocio ficticio. Plantilla con concepto «Perfil de etapa»: la web se recorre como una salida de 42 km.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@100..150,600;100..150,800&family=Chivo:wght@400;500;700&family=Azeret+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/estilo.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BikeStore",
+  "name": "Sete Curvas",
+  "description": "Tienda y taller de bicicletas con alquiler y salidas de club. Negocio ficticio usado como demostración.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rúa da Ponte Nova, 5",
+    "postalCode": "32003",
+    "addressLocality": "Ourense",
+    "addressRegion": "Ourense",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34988000015",
+  "email": "hola@setecurvas.example",
+  "priceRange": "€€",
+  "openingHours": ["Tu-Fr 10:00-14:00", "Tu-Fr 16:30-20:00", "Sa 10:00-14:00"],
+  "disambiguatingDescription": "Negocio ficticio. Sitio de demostración."
+}
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<div class="cursor" aria-hidden="true" data-cursor>
+  <span class="cursor__rueda"></span>
+  <span class="cursor__texto"></span>
+</div>
+
+<header class="cabecera" data-cabecera>
+  <a class="marca" href="#inicio">
+    <svg class="marca__icono" viewBox="0 0 48 28" aria-hidden="true" focusable="false">
+      <circle cx="11" cy="18" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <circle cx="37" cy="18" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <path d="M11 18l8-12h11l-4 12M19 6h7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="24" cy="18" r="2" fill="currentColor"/>
+    </svg>
+    <span class="marca__texto">Sete Curvas</span>
+  </a>
+
+  <button class="hamburguesa" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-boton>
+    <span class="hamburguesa__lineas" aria-hidden="true"><i></i><i></i></span>
+    <span>Menú</span>
+  </button>
+
+  <nav class="nav" id="menu-principal" aria-label="Navegación principal" data-menu>
+    <ul>
+      <li><a href="#taller">Taller</a></li>
+      <li><a href="#bicis">Bicis</a></li>
+      <li><a href="#alquiler">Alquiler</a></li>
+      <li><a href="#club">El club</a></li>
+      <li><a href="#gente">Quién atiende</a></li>
+      <li><a href="#visita">Llegada</a></li>
+    </ul>
+    <a class="boton boton--naranja nav__cta" href="#cita">Cita de taller</a>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <!-- ══════════ KM 0 · SALIDA ══════════ -->
+  <section class="hero" id="inicio" data-seccion="inicio" data-km="0" data-alt="120" data-pendiente="0,0">
+    <p class="kicker">Ourense · tienda y taller · desde 2011</p>
+    <h1 class="hero__titulo" data-char>Una tienda que se recorre como una etapa</h1>
+    <p class="hero__entrada">
+      Siete curvas es lo que hay entre la puerta y el alto del Coto. Esta página funciona
+      igual: empieza en el kilómetro cero y termina en la meta, con el perfil ahí abajo
+      para que sepas siempre por dónde vas.
+    </p>
+    <div class="hero__acciones">
+      <a class="boton boton--naranja" href="#cita" data-iman>Pedir cita de taller</a>
+      <a class="boton boton--linea" href="#bicis" data-iman>Ver las bicis</a>
+    </div>
+    <ul class="hero__cifras">
+      <li><b data-contador="42" data-sufijo=" km">0</b><span>de recorrido en esta página</span></li>
+      <li><b data-contador="780" data-sufijo=" m">0</b><span>de desnivel acumulado</span></li>
+      <li><b data-contador="14" data-sufijo="">0</b><span>años arreglando bicis</span></li>
+    </ul>
+  </section>
+
+  <!-- ══════════ KM 3 · TALLER ══════════ -->
+  <section class="taller" id="taller" data-seccion="taller" data-km="3" data-alt="150" data-pendiente="1,4" aria-labelledby="t-taller">
+    <div class="seccion__cabeza">
+      <p class="indice"><span>km 3</span> · Taller</p>
+      <h2 id="t-taller" data-char>Aquí se arregla, no se cambia por sistema</h2>
+      <p class="parrafo">
+        Dos puestos de trabajo y cita previa para que nadie espere de pie. Si una pieza
+        aguanta otra temporada, te lo decimos; si no aguanta, también.
+      </p>
+    </div>
+
+    <div class="taller__rejilla">
+      <table class="tabla">
+        <caption class="visualmente-oculta">Precios del taller, IVA incluido</caption>
+        <thead><tr><th scope="col">Trabajo</th><th scope="col">Precio</th><th scope="col">Cuánto tarda</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Diagnóstico y presupuesto</th><td>0 €</td><td>10 minutos, en el mostrador</td></tr>
+          <tr><th scope="row">Puesta a punto completa</th><td>45 €</td><td>48 h</td></tr>
+          <tr><th scope="row">Sangrado de frenos hidráulicos</th><td>30 €</td><td>Mismo día</td></tr>
+          <tr><th scope="row">Centrado de rueda</th><td>18 €</td><td>Mismo día</td></tr>
+          <tr><th scope="row">Cambio de cubierta y cámara</th><td>12 €</td><td>En el momento</td></tr>
+          <tr><th scope="row">Montaje de bici nueva</th><td>desde 120 €</td><td>3 a 5 días</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="taller__foto">
+        <img src="assets/foto/w800/taller.jpg"
+             srcset="assets/foto/w800/taller.jpg 800w, assets/foto/w1600/taller.jpg 1600w"
+             sizes="(max-width: 900px) 92vw, 32vw"
+             width="1600" height="2400" loading="lazy"
+             alt="Banco de trabajo de un taller con las llaves colgadas y ordenadas.">
+        <figcaption>Fotografía de archivo: el banco no es el de este taller, que es inventado.</figcaption>
+      </figure>
+    </div>
+
+    <p class="aviso">Precios de muestra. En una tienda real dependen de la pieza y de cómo llegue la bici.</p>
+  </section>
+
+  <!-- ══════════ KM 11 · LAS BICIS ══════════ -->
+  <section class="bicis" id="bicis" data-seccion="bicis" data-km="11" data-alt="330" data-pendiente="4,8" aria-labelledby="t-bicis">
+    <div class="seccion__cabeza">
+      <p class="indice"><span>km 11</span> · Las bicis</p>
+      <h2 id="t-bicis" data-char>Seis que tenemos siempre en el suelo</h2>
+      <p class="parrafo">
+        No trabajamos con catálogos de cien modelos. Estas seis las conocemos, las
+        montamos nosotros y sabemos qué se le rompe a cada una.
+      </p>
+    </div>
+
+    <ul class="rejilla" data-rejilla>
+      <li class="bici">
+        <img src="assets/bicis/bici-gravel.svg" width="340" height="210" loading="lazy" alt="Bicicleta de gravel Fisterra, cuadro verde con manillar de carretera y cubiertas anchas.">
+        <div class="bici__pie">
+          <h3>Fisterra</h3>
+          <p class="bici__tipo">Gravel · cuadro de aluminio · 10,4 kg</p>
+          <p class="bici__uso">Para pistas de tierra y carretera mala. La que más vendemos.</p>
+          <p class="bici__precio">1.190 €</p>
+        </div>
+      </li>
+      <li class="bici">
+        <img src="assets/bicis/bici-carretera.svg" width="340" height="210" loading="lazy" alt="Bicicleta de carretera Ancares, cuadro naranja con cubiertas finas.">
+        <div class="bici__pie">
+          <h3>Ancares</h3>
+          <p class="bici__tipo">Carretera · cuadro de carbono · 8,2 kg</p>
+          <p class="bici__uso">Para salir los domingos y subir sin excusas.</p>
+          <p class="bici__precio">2.350 €</p>
+        </div>
+      </li>
+      <li class="bici">
+        <img src="assets/bicis/bici-urbana.svg" width="340" height="210" loading="lazy" alt="Bicicleta urbana Ponte, cuadro azul de paso bajo con guardabarros.">
+        <div class="bici__pie">
+          <h3>Ponte</h3>
+          <p class="bici__tipo">Urbana · paso bajo · guardabarros</p>
+          <p class="bici__uso">Para ir al trabajo sin cambiarte de ropa.</p>
+          <p class="bici__precio">640 €</p>
+        </div>
+      </li>
+      <li class="bici">
+        <img src="assets/bicis/bici-montana.svg" width="340" height="210" loading="lazy" alt="Bicicleta de montaña Trevinca, cuadro negro con horquilla de suspensión amarilla.">
+        <div class="bici__pie">
+          <h3>Trevinca</h3>
+          <p class="bici__tipo">Montaña · horquilla de 120 mm</p>
+          <p class="bici__uso">Para el monte de aquí, que es piedra y raíz.</p>
+          <p class="bici__precio">1.480 €</p>
+        </div>
+      </li>
+      <li class="bici">
+        <img src="assets/bicis/bici-electrica.svg" width="340" height="210" loading="lazy" alt="Bicicleta eléctrica Miño, cuadro de paso bajo con batería en el tubo inferior.">
+        <div class="bici__pie">
+          <h3>Miño</h3>
+          <p class="bici__tipo">Eléctrica · batería de 500 Wh · 70 km</p>
+          <p class="bici__uso">Para la cuesta de casa, que en Ourense todas lo son.</p>
+          <p class="bici__precio">1.890 €</p>
+        </div>
+      </li>
+      <li class="bici">
+        <img src="assets/bicis/bici-infantil.svg" width="340" height="210" loading="lazy" alt="Bicicleta infantil Airiños, cuadro rojo pequeño de paso bajo.">
+        <div class="bici__pie">
+          <h3>Airiños</h3>
+          <p class="bici__tipo">Infantil · rueda de 20" · 8,6 kg</p>
+          <p class="bici__uso">Ligera de verdad, que es lo único que importa a esa edad.</p>
+          <p class="bici__precio">310 €</p>
+        </div>
+      </li>
+    </ul>
+    <p class="aviso">Modelos, pesos y precios inventados para esta demostración. Los dibujos son propios: no representan a ninguna marca real.</p>
+  </section>
+
+  <!-- ══════════ KM 19 · ALQUILER ══════════ -->
+  <section class="alquiler" id="alquiler" data-seccion="alquiler" data-km="19" data-alt="260" data-pendiente="-2,1" aria-labelledby="t-alquiler">
+    <div class="seccion__cabeza">
+      <p class="indice"><span>km 19</span> · Alquiler y rutas</p>
+      <h2 id="t-alquiler" data-char>Te dejamos la bici y el mapa</h2>
+    </div>
+
+    <div class="alquiler__rejilla">
+      <ul class="tarifas">
+        <li><span>Media jornada (4 h)</span><b>18 €</b></li>
+        <li><span>Día completo</span><b>28 €</b></li>
+        <li><span>Fin de semana</span><b>45 €</b></li>
+        <li><span>Eléctrica, día completo</span><b>42 €</b></li>
+        <li><span>Casco, luces y candado</span><b>Incluidos</b></li>
+        <li><span>Fianza (se devuelve)</span><b>50 €</b></li>
+      </ul>
+
+      <ol class="rutas">
+        <li>
+          <p class="rutas__nombre">Ribeira baja</p>
+          <p class="rutas__dato">24 km · 180 m · asfalto</p>
+          <p>Llana, por el río y de vuelta. Se hace en una mañana y hay dónde parar a comer a mitad.</p>
+        </li>
+        <li>
+          <p class="rutas__nombre">Las siete curvas</p>
+          <p class="rutas__dato">38 km · 720 m · asfalto</p>
+          <p>La de la casa. Sube al alto del Coto por las siete curvas que nos dan el nombre y baja por el otro lado.</p>
+        </li>
+        <li>
+          <p class="rutas__nombre">Pista de los castaños</p>
+          <p class="rutas__dato">31 km · 540 m · tierra</p>
+          <p>Para gravel o montaña. Nada técnico, pero con barro de octubre a marzo.</p>
+        </li>
+      </ol>
+
+      <figure class="alquiler__foto">
+        <img src="assets/foto/w800/bosque.jpg"
+             srcset="assets/foto/w800/bosque.jpg 800w, assets/foto/w1600/bosque.jpg 1600w"
+             sizes="(max-width: 900px) 92vw, 26vw"
+             width="1600" height="2852" loading="lazy"
+             alt="Bicicleta de montaña apoyada en un pino, en un bosque de pinos.">
+        <figcaption>La pista de los castaños, en otoño.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ KM 27 · EL CLUB ══════════ -->
+  <section class="club" id="club" data-seccion="club" data-km="27" data-alt="640" data-pendiente="6,2" aria-labelledby="t-club">
+    <div class="seccion__cabeza">
+      <p class="indice"><span>km 27</span> · El club de los martes</p>
+      <h2 id="t-club" data-char>Se sale a las 18:30 y no se deja a nadie atrás</h2>
+    </div>
+
+    <div class="club__rejilla">
+      <div class="club__texto">
+        <p>Salimos desde la puerta todos los martes del año, llueva o no. Dos grupos: uno
+        de ritmo tranquilo, entre 22 y 24 de media, y otro que va más rápido. Al primero
+        siempre va alguien de la tienda de escoba, así que no hay manera de perderse.</p>
+        <p>No hay cuota ni hay que apuntarse a nada. Lo único obligatorio es el casco y
+        traer una cámara de repuesto: si pinchas, paramos todos.</p>
+        <ul class="club__datos">
+          <li><b>18:30</b><span>salida, todos los martes</span></li>
+          <li><b>45 km</b><span>de recorrido medio</span></li>
+          <li><b>2</b><span>grupos por ritmo</span></li>
+          <li><b>0 €</b><span>de cuota</span></li>
+        </ul>
+      </div>
+      <figure class="club__foto">
+        <img src="assets/foto/w800/carretera.jpg"
+             srcset="assets/foto/w800/carretera.jpg 800w, assets/foto/w1600/carretera.jpg 1600w"
+             sizes="(max-width: 900px) 92vw, 44vw"
+             width="1600" height="1280" loading="lazy"
+             alt="Tres ciclistas de espaldas, muy pequeños, rodando juntos por una carretera despejada.">
+        <figcaption>Fotografía de archivo, no de una salida de este club.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ KM 34 · QUIÉN ATIENDE ══════════ -->
+  <section class="gente" id="gente" data-seccion="gente" data-km="34" data-alt="520" data-pendiente="-1,8" aria-labelledby="t-gente">
+    <div class="seccion__cabeza">
+      <p class="indice"><span>km 34</span> · Quién atiende</p>
+      <h2 id="t-gente" data-char>Tres, y los tres montan</h2>
+    </div>
+
+    <ul class="fichas">
+      <li>
+        <h3>Uxío Barxa</h3>
+        <p class="fichas__papel">Mecánico · fundador</p>
+        <p>Abrió la tienda en 2011 con un banco de trabajo y un compresor. Es quien monta
+        las ruedas a mano y quien dice que una pieza aún aguanta.</p>
+      </li>
+      <li>
+        <h3>Sabela Pousa</h3>
+        <p class="fichas__papel">Mecánica · frenos y suspensión</p>
+        <p>Viene del mundo del descenso. Si algo hace un ruido raro y nadie sabe de dónde
+        sale, se lo dejamos a ella.</p>
+      </li>
+      <li>
+        <h3>Antón Regueira</h3>
+        <p class="fichas__papel">Mostrador · alquiler y rutas</p>
+        <p>Lleva el alquiler y se sabe todas las pistas de la zona. Es el que va de escoba
+        en el grupo tranquilo de los martes.</p>
+      </li>
+    </ul>
+    <p class="aviso">Personas inventadas para esta demostración.</p>
+  </section>
+
+  <!-- ══════════ KM 42 · LLEGADA ══════════ -->
+  <section class="visita" id="visita" data-seccion="visita" data-km="42" data-alt="180" data-pendiente="-3,6" aria-labelledby="t-visita">
+    <div class="seccion__cabeza">
+      <p class="indice"><span>km 42</span> · Llegada</p>
+      <h2 id="t-visita" data-char>Rúa da Ponte Nova, 5</h2>
+    </div>
+
+    <div class="visita__rejilla">
+      <form class="formulario" id="cita" data-cita novalidate>
+        <h3>Cita de taller</h3>
+        <p class="formulario__texto">Dinos qué le pasa y cuándo puedes traerla. Confirmamos por teléfono el mismo día.</p>
+        <p class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        </p>
+        <p class="campo">
+          <label for="tel">Teléfono</label>
+          <input id="tel" name="tel" type="tel" autocomplete="tel" required>
+        </p>
+        <p class="campo">
+          <label for="tipo">Qué necesita</label>
+          <select id="tipo" name="tipo">
+            <option>Puesta a punto completa</option>
+            <option>Frenos</option>
+            <option>Cambio y transmisión</option>
+            <option>Ruedas</option>
+            <option>No lo sé, hace un ruido raro</option>
+          </select>
+        </p>
+        <p class="campo">
+          <label for="detalle">Cuéntanoslo</label>
+          <textarea id="detalle" name="detalle" rows="3" required>Gravel de 2019, el cambio se sube solo en los piñones grandes</textarea>
+        </p>
+        <button class="boton boton--naranja" type="submit" data-iman>Pedir la cita</button>
+        <p class="formulario__estado" data-cita-estado role="status"></p>
+        <p class="formulario__demo">Formulario de muestra: no envía nada a ningún sitio ni guarda lo que escribas.</p>
+      </form>
+
+      <div class="donde">
+        <p class="donde__estado" data-estado>Comprobando el horario…</p>
+        <address>
+          Rúa da Ponte Nova, 5 · bajo<br>
+          32003 Ourense<br>
+          <a href="tel:+34988000015">988 00 00 15</a><br>
+          <a href="mailto:hola@setecurvas.example">hola@setecurvas.example</a>
+        </address>
+        <dl class="horario" data-horario>
+          <div data-dias="2,3,4,5"><dt>Martes a viernes</dt><dd>10:00–14:00 · 16:30–20:00</dd></div>
+          <div data-dias="6"><dt>Sábado</dt><dd>10:00–14:00</dd></div>
+          <div data-dias="0,1"><dt>Domingo y lunes</dt><dd>Cerrado</dd></div>
+        </dl>
+        <p class="donde__nota">
+          Bajo a pie de calle, con rampa para entrar la bici sin levantarla. Hay aparcamiento
+          de bicis en la puerta y la estación de autobuses queda a diez minutos andando.
+        </p>
+        <div class="mapa" data-mapa>
+          <button class="boton boton--linea" type="button" data-mapa-boton>Cargar el mapa de Google</button>
+          <p class="mapa__aviso">El mapa se carga solo si lo pides: hasta entonces esta web no llama a ningún servidor de terceros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════ EL PERFIL DE LA ETAPA ══════════ -->
+<div class="perfil" data-perfil aria-hidden="true">
+  <!--PERFIL-->
+    <svg class="perfil__dibujo" viewBox="0 0 1000 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs>
+        <clipPath id="recorrido" clipPathUnits="userSpaceOnUse">
+          <rect data-recorrido x="0" y="0" width="0" height="140"/>
+        </clipPath>
+      </defs>
+      <path class="perfil__relleno" d="M0.0 120.9 L2.7 120.5 L5.5 120.1 L8.2 119.6 L11.0 119.2 L13.7 118.7 L16.5 118.3 L19.2 117.9 L22.0 117.6 L24.7 117.3 L27.5 117.0 L30.2 116.8 L33.0 116.6 L35.7 116.5 L38.5 116.4 L41.2 116.4 L44.0 116.3 L46.7 116.3 L49.5 116.3 L52.2 116.3 L54.9 116.3 L57.7 116.3 L60.4 116.3 L63.2 116.3 L65.9 116.2 L68.7 116.1 L71.4 116.0 L78.8 115.5 L86.1 114.5 L93.4 113.2 L100.7 111.9 L108.1 110.7 L115.4 109.8 L122.7 109.2 L130.0 108.6 L137.4 108.0 L144.7 107.0 L152.0 105.7 L159.3 103.8 L166.7 101.5 L174.0 98.9 L181.3 96.3 L188.6 93.8 L196.0 91.6 L203.3 90.0 L210.6 88.9 L217.9 88.2 L225.3 87.7 L232.6 87.2 L239.9 86.5 L247.3 85.7 L254.6 84.6 L261.9 83.6 L269.2 82.6 L276.6 81.9 L283.9 81.7 L291.2 81.9 L298.5 82.7 L305.9 83.9 L313.2 85.3 L320.5 86.5 L327.8 87.6 L335.2 88.3 L342.5 88.6 L349.8 88.7 L357.1 88.8 L364.5 89.1 L371.8 89.7 L379.1 90.7 L386.4 92.1 L393.8 93.6 L401.1 95.2 L408.4 96.6 L415.8 97.5 L423.1 97.9 L430.4 97.7 L437.7 97.2 L445.1 96.5 L452.4 95.8 L459.7 95.1 L467.0 94.4 L474.4 93.5 L481.7 92.4 L489.0 90.9 L496.3 88.9 L503.7 86.1 L511.0 82.7 L518.3 78.5 L525.6 73.9 L533.0 69.1 L540.3 64.3 L547.6 59.8 L554.9 55.7 L562.3 52.2 L569.6 49.1 L576.9 46.3 L584.2 43.5 L591.6 40.8 L598.9 38.0 L606.2 35.2 L613.6 32.5 L620.9 30.2 L628.2 28.5 L635.5 27.6 L642.9 27.6 L649.3 28.3 L655.7 29.2 L662.1 30.5 L668.5 31.7 L674.9 33.0 L681.3 34.0 L687.7 34.8 L694.1 35.3 L700.5 35.7 L707.0 36.1 L713.4 36.6 L719.8 37.3 L726.2 38.2 L732.6 39.6 L739.0 41.1 L745.4 42.8 L751.8 44.6 L758.2 46.1 L764.7 47.4 L771.1 48.3 L777.5 48.7 L783.9 48.8 L790.3 48.5 L796.7 48.1 L803.1 47.7 L809.5 47.4 L816.8 47.5 L824.2 48.6 L831.5 50.5 L838.8 52.9 L846.2 55.7 L853.5 58.5 L860.8 61.3 L868.1 64.0 L875.5 66.7 L882.8 69.4 L890.1 72.3 L897.4 75.6 L904.8 79.3 L912.1 83.4 L919.4 87.8 L926.7 92.1 L934.1 96.2 L941.4 99.8 L948.7 102.7 L956.0 104.8 L963.4 106.2 L970.7 107.2 L978.0 107.7 L985.3 108.2 L992.7 108.6 L1000.0 110.3 L1000 140 L0 140 Z"/>
+      <path class="perfil__linea" d="M0.0 120.9 L2.7 120.5 L5.5 120.1 L8.2 119.6 L11.0 119.2 L13.7 118.7 L16.5 118.3 L19.2 117.9 L22.0 117.6 L24.7 117.3 L27.5 117.0 L30.2 116.8 L33.0 116.6 L35.7 116.5 L38.5 116.4 L41.2 116.4 L44.0 116.3 L46.7 116.3 L49.5 116.3 L52.2 116.3 L54.9 116.3 L57.7 116.3 L60.4 116.3 L63.2 116.3 L65.9 116.2 L68.7 116.1 L71.4 116.0 L78.8 115.5 L86.1 114.5 L93.4 113.2 L100.7 111.9 L108.1 110.7 L115.4 109.8 L122.7 109.2 L130.0 108.6 L137.4 108.0 L144.7 107.0 L152.0 105.7 L159.3 103.8 L166.7 101.5 L174.0 98.9 L181.3 96.3 L188.6 93.8 L196.0 91.6 L203.3 90.0 L210.6 88.9 L217.9 88.2 L225.3 87.7 L232.6 87.2 L239.9 86.5 L247.3 85.7 L254.6 84.6 L261.9 83.6 L269.2 82.6 L276.6 81.9 L283.9 81.7 L291.2 81.9 L298.5 82.7 L305.9 83.9 L313.2 85.3 L320.5 86.5 L327.8 87.6 L335.2 88.3 L342.5 88.6 L349.8 88.7 L357.1 88.8 L364.5 89.1 L371.8 89.7 L379.1 90.7 L386.4 92.1 L393.8 93.6 L401.1 95.2 L408.4 96.6 L415.8 97.5 L423.1 97.9 L430.4 97.7 L437.7 97.2 L445.1 96.5 L452.4 95.8 L459.7 95.1 L467.0 94.4 L474.4 93.5 L481.7 92.4 L489.0 90.9 L496.3 88.9 L503.7 86.1 L511.0 82.7 L518.3 78.5 L525.6 73.9 L533.0 69.1 L540.3 64.3 L547.6 59.8 L554.9 55.7 L562.3 52.2 L569.6 49.1 L576.9 46.3 L584.2 43.5 L591.6 40.8 L598.9 38.0 L606.2 35.2 L613.6 32.5 L620.9 30.2 L628.2 28.5 L635.5 27.6 L642.9 27.6 L649.3 28.3 L655.7 29.2 L662.1 30.5 L668.5 31.7 L674.9 33.0 L681.3 34.0 L687.7 34.8 L694.1 35.3 L700.5 35.7 L707.0 36.1 L713.4 36.6 L719.8 37.3 L726.2 38.2 L732.6 39.6 L739.0 41.1 L745.4 42.8 L751.8 44.6 L758.2 46.1 L764.7 47.4 L771.1 48.3 L777.5 48.7 L783.9 48.8 L790.3 48.5 L796.7 48.1 L803.1 47.7 L809.5 47.4 L816.8 47.5 L824.2 48.6 L831.5 50.5 L838.8 52.9 L846.2 55.7 L853.5 58.5 L860.8 61.3 L868.1 64.0 L875.5 66.7 L882.8 69.4 L890.1 72.3 L897.4 75.6 L904.8 79.3 L912.1 83.4 L919.4 87.8 L926.7 92.1 L934.1 96.2 L941.4 99.8 L948.7 102.7 L956.0 104.8 L963.4 106.2 L970.7 107.2 L978.0 107.7 L985.3 108.2 L992.7 108.6 L1000.0 110.3" pathLength="1"/>
+      <path class="perfil__hecho" data-perfil-hecho d="M0.0 120.9 L2.7 120.5 L5.5 120.1 L8.2 119.6 L11.0 119.2 L13.7 118.7 L16.5 118.3 L19.2 117.9 L22.0 117.6 L24.7 117.3 L27.5 117.0 L30.2 116.8 L33.0 116.6 L35.7 116.5 L38.5 116.4 L41.2 116.4 L44.0 116.3 L46.7 116.3 L49.5 116.3 L52.2 116.3 L54.9 116.3 L57.7 116.3 L60.4 116.3 L63.2 116.3 L65.9 116.2 L68.7 116.1 L71.4 116.0 L78.8 115.5 L86.1 114.5 L93.4 113.2 L100.7 111.9 L108.1 110.7 L115.4 109.8 L122.7 109.2 L130.0 108.6 L137.4 108.0 L144.7 107.0 L152.0 105.7 L159.3 103.8 L166.7 101.5 L174.0 98.9 L181.3 96.3 L188.6 93.8 L196.0 91.6 L203.3 90.0 L210.6 88.9 L217.9 88.2 L225.3 87.7 L232.6 87.2 L239.9 86.5 L247.3 85.7 L254.6 84.6 L261.9 83.6 L269.2 82.6 L276.6 81.9 L283.9 81.7 L291.2 81.9 L298.5 82.7 L305.9 83.9 L313.2 85.3 L320.5 86.5 L327.8 87.6 L335.2 88.3 L342.5 88.6 L349.8 88.7 L357.1 88.8 L364.5 89.1 L371.8 89.7 L379.1 90.7 L386.4 92.1 L393.8 93.6 L401.1 95.2 L408.4 96.6 L415.8 97.5 L423.1 97.9 L430.4 97.7 L437.7 97.2 L445.1 96.5 L452.4 95.8 L459.7 95.1 L467.0 94.4 L474.4 93.5 L481.7 92.4 L489.0 90.9 L496.3 88.9 L503.7 86.1 L511.0 82.7 L518.3 78.5 L525.6 73.9 L533.0 69.1 L540.3 64.3 L547.6 59.8 L554.9 55.7 L562.3 52.2 L569.6 49.1 L576.9 46.3 L584.2 43.5 L591.6 40.8 L598.9 38.0 L606.2 35.2 L613.6 32.5 L620.9 30.2 L628.2 28.5 L635.5 27.6 L642.9 27.6 L649.3 28.3 L655.7 29.2 L662.1 30.5 L668.5 31.7 L674.9 33.0 L681.3 34.0 L687.7 34.8 L694.1 35.3 L700.5 35.7 L707.0 36.1 L713.4 36.6 L719.8 37.3 L726.2 38.2 L732.6 39.6 L739.0 41.1 L745.4 42.8 L751.8 44.6 L758.2 46.1 L764.7 47.4 L771.1 48.3 L777.5 48.7 L783.9 48.8 L790.3 48.5 L796.7 48.1 L803.1 47.7 L809.5 47.4 L816.8 47.5 L824.2 48.6 L831.5 50.5 L838.8 52.9 L846.2 55.7 L853.5 58.5 L860.8 61.3 L868.1 64.0 L875.5 66.7 L882.8 69.4 L890.1 72.3 L897.4 75.6 L904.8 79.3 L912.1 83.4 L919.4 87.8 L926.7 92.1 L934.1 96.2 L941.4 99.8 L948.7 102.7 L956.0 104.8 L963.4 106.2 L970.7 107.2 L978.0 107.7 L985.3 108.2 L992.7 108.6 L1000.0 110.3" pathLength="1"/>
+      <g class="perfil__marca" data-marca="inicio" data-km="0" data-alt="120">
+        <line x1="3" y1="120.9" x2="3" y2="136"/>
+        <circle cx="3" cy="120.9" r="4"/>
+      </g>
+      <g class="perfil__marca" data-marca="taller" data-km="3" data-alt="150">
+        <line x1="71.4" y1="115.6" x2="71.4" y2="136"/>
+        <circle cx="71.4" cy="115.6" r="4"/>
+      </g>
+      <g class="perfil__marca" data-marca="bicis" data-km="11" data-alt="330">
+        <line x1="261.9" y1="83.6" x2="261.9" y2="136"/>
+        <circle cx="261.9" cy="83.6" r="4"/>
+      </g>
+      <g class="perfil__marca" data-marca="alquiler" data-km="19" data-alt="260">
+        <line x1="452.4" y1="96.1" x2="452.4" y2="136"/>
+        <circle cx="452.4" cy="96.1" r="4"/>
+      </g>
+      <g class="perfil__marca" data-marca="club" data-km="27" data-alt="640">
+        <line x1="642.9" y1="28.6" x2="642.9" y2="136"/>
+        <circle cx="642.9" cy="28.6" r="4"/>
+      </g>
+      <g class="perfil__marca" data-marca="gente" data-km="34" data-alt="520">
+        <line x1="809.5" y1="49.9" x2="809.5" y2="136"/>
+        <circle cx="809.5" cy="49.9" r="4"/>
+      </g>
+      <g class="perfil__marca" data-marca="visita" data-km="42" data-alt="180">
+        <line x1="997" y1="110.3" x2="997" y2="136"/>
+        <circle cx="997" cy="110.3" r="4"/>
+      </g>
+    </svg>
+    <span class="perfil__ciclista" data-ciclista aria-hidden="true"></span>
+    <!--/PERFIL-->
+  <p class="perfil__lectura">
+    <span class="perfil__km" data-lectura-km>km 0</span>
+    <span class="perfil__alt" data-lectura-alt>120 m</span>
+    <span class="perfil__pendiente" data-lectura-pendiente>0,0 %</span>
+  </p>
+</div>
+<p class="visualmente-oculta" data-vivo>Punto kilométrico actual: <span data-lectura-texto>km 0, altitud 120 metros</span>.</p>
+
+<footer class="pie">
+  <div class="pie__marca">
+    <svg class="marca__icono" viewBox="0 0 48 28" aria-hidden="true" focusable="false">
+      <circle cx="11" cy="18" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <circle cx="37" cy="18" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <path d="M11 18l8-12h11l-4 12M19 6h7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="24" cy="18" r="2" fill="currentColor"/>
+    </svg>
+    <p>Sete Curvas · bicicletas y taller<br>Rúa da Ponte Nova, 5 · Ourense</p>
+  </div>
+  <nav class="pie__nav" aria-label="Enlaces del pie">
+    <ul>
+      <li><a href="#taller">Taller</a></li>
+      <li><a href="#bicis">Bicis</a></li>
+      <li><a href="#cita">Cita de taller</a></li>
+      <li><a href="legal.html">Aviso legal y privacidad</a></li>
+    </ul>
+  </nav>
+  <p class="pie__sello">
+    <strong>Sitio de demostración.</strong> Sete Curvas es un negocio ficticio; los datos,
+    precios, modelos, rutas y personas son de muestra. Ningún dato de esta página
+    corresponde a un negocio real. Fotografías de archivo bajo licencia Pexels,
+    acreditadas en
+    <a href="https://github.com/alvarotaiagu/plantilla-bicicletas-web/blob/main/CREDITOS.md">CREDITOS.md</a>.
+  </p>
+</footer>
+
+<div class="cookie-banner" data-cookies hidden>
+  <p>Esta web usa una única cookie técnica para recordar que has visto este aviso. No hay analítica, ni seguimiento, ni cookies de terceros: el mapa de Google solo se carga si pulsas el botón.</p>
+  <div class="cookie-banner__acciones">
+    <button class="boton boton--naranja" type="button" data-cookies-ok>Entendido</button>
+    <a class="boton boton--linea" href="legal.html#cookies">Leer más</a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

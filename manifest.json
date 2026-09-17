@@ -1,0 +1,13 @@
+{
+  "name": "Sete Curvas · bicicletas y taller (demostración)",
+  "short_name": "Sete Curvas",
+  "description": "Plantilla de demostración para tienda y taller de bicicletas. Negocio ficticio.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#EFEDE7",
+  "theme_color": "#EFEDE7",
+  "lang": "es",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
