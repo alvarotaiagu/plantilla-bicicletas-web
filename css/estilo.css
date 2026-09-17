@@ -10,9 +10,12 @@
   --papel-claro: #F7F6F2;
   --tinta: #1A1C1A;
   --tinta-70: rgba(26, 28, 26, 0.7);
-  --tinta-45: rgba(26, 28, 26, 0.45);
+  --tinta-45: rgba(26, 28, 26, 0.62);
   --tinta-12: rgba(26, 28, 26, 0.12);
   --naranja: #FF4A17;
+  /* El flúor no pasa contraste como texto pequeño sobre papel: para texto se
+     usa esta versión más oscura, y el flúor se queda para los fondos. */
+  --naranja-texto: #BE3510;
   --pino: #1F5D4C;
   --asfalto: #4A4E4A;
 
@@ -79,7 +82,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
   color: var(--tinta-45); margin: 0 0 1.1rem;
 }
 .indice span {
-  background: var(--naranja); color: var(--papel-claro);
+  background: var(--naranja-texto); color: var(--papel-claro);
   padding: 0.2rem 0.5rem; border-radius: 3px; margin-right: 0.4rem;
 }
 .parrafo { color: var(--tinta-70); max-width: 56ch; }
@@ -97,7 +100,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
   background: transparent; color: var(--tinta); cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
-.boton--naranja { background: var(--naranja); border-color: var(--naranja); color: var(--papel-claro); }
+.boton--naranja { background: var(--naranja); border-color: var(--naranja); color: var(--tinta); }
 .boton--naranja:hover { background: var(--tinta); border-color: var(--tinta); }
 .boton--linea:hover { background: var(--pino); border-color: var(--pino); color: var(--papel-claro); }
 
@@ -159,7 +162,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
 .hero__cifras b {
   font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 130;
   font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1;
-  color: var(--naranja); font-variant-numeric: tabular-nums;
+  color: var(--naranja-texto); font-variant-numeric: tabular-nums;
 }
 .hero__cifras span { font-family: var(--mono); font-size: 0.64rem; color: var(--tinta-45); margin-top: 0.4rem; max-width: 18ch; }
 
@@ -183,7 +186,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
 .tabla tbody th { font-family: var(--texto); font-weight: 700; font-size: 1rem; }
 .tabla td:first-of-type {
   font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 120;
-  font-size: 1.3rem; color: var(--naranja); white-space: nowrap; width: 8rem;
+  font-size: 1.3rem; color: var(--naranja-texto); white-space: nowrap; width: 8rem;
 }
 .tabla td:last-child { color: var(--tinta-70); font-size: 0.9em; }
 
@@ -245,7 +248,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
   font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 115;
   font-size: 1.3rem; text-transform: uppercase; margin: 0 0 0.2rem;
 }
-.rutas__dato { font-family: var(--mono); font-size: 0.68rem; color: var(--naranja); margin: 0 0 0.5rem; }
+.rutas__dato { font-family: var(--mono); font-size: 0.68rem; color: var(--naranja-texto); margin: 0 0 0.5rem; }
 .rutas li p:last-child { color: var(--tinta-70); font-size: 0.92em; margin: 0; }
 
 .alquiler__foto { margin: 0; }
@@ -289,7 +292,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
 }
 .fichas li { border-top: 3px solid var(--tinta); padding-top: 1rem; }
 .fichas h3 { font-size: 1.4rem; margin-bottom: 0.3rem; }
-.fichas__papel { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--naranja); margin-bottom: 0.7rem; }
+.fichas__papel { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--naranja-texto); margin-bottom: 0.7rem; }
 .fichas li p:last-child { color: var(--tinta-70); font-size: 0.94em; margin: 0; }
 
 /* ── Visita ────────────────────────────────────────────────────────────── */
@@ -326,7 +329,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
 .donde address { font-style: normal; line-height: 1.9; margin-bottom: 1.2rem; }
 .horario { margin: 0 0 1.2rem; display: grid; gap: 0.5rem; }
 .horario > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; border-top: 1px solid var(--tinta-12); padding-top: 0.5rem; }
-.horario > div.es-hoy dt { color: var(--naranja); font-weight: 700; }
+.horario > div.es-hoy dt { color: var(--naranja-texto); font-weight: 700; }
 .horario dt { font-weight: 500; }
 .horario dd { margin: 0; font-family: var(--mono); font-size: 0.76rem; text-align: right; }
 .donde__nota { color: var(--tinta-70); font-size: 0.92em; }
@@ -368,7 +371,7 @@ section[id] { scroll-margin-top: clamp(4.5rem, 10vh, 6rem); }
 }
 .perfil__km { font-weight: 500; font-size: 0.85rem; }
 .perfil__alt { color: var(--tinta-45); }
-.perfil__pendiente { color: var(--naranja); font-weight: 500; }
+.perfil__pendiente { color: var(--naranja-texto); font-weight: 500; }
 
 /* ── Pie ───────────────────────────────────────────────────────────────── */
 .pie {
