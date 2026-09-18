@@ -50,9 +50,24 @@
   "disambiguatingDescription": "Negocio ficticio. Sitio de demostración."
 }
 </script>
+<!-- Sin JavaScript no hay quien levante la cortina: mejor no enseñarla. -->
+<noscript><style>.cortina { display: none !important; }</style></noscript>
 </head>
 <body>
 <a class="salto" href="#contenido">Saltar al contenido</a>
+<!-- Cortina «perfil de etapa»: el ciclista recorre el perfil y la ladera barre. -->
+<div class="cortina cortina--bici" data-cortina aria-hidden="true">
+  <div class="cortina__ladera"></div>
+  <div class="cortina__centro">
+    <svg class="cortina__perfil" viewBox="0 0 320 90" aria-hidden="true">
+      <path class="cortina__cresta" d="M6 78L48 62l30 12 34-34 28 16 30-42 32 30 26-10 32 24 48-12"/>
+      <circle class="cortina__ciclista" cx="6" cy="78" r="5.5"/>
+    </svg>
+    <p class="cortina__marca">Sete Curvas</p>
+    <p class="cortina__pie">rodando</p>
+  </div>
+</div>
+
 
 <div class="cursor" aria-hidden="true" data-cursor>
   <span class="cursor__rueda"></span>

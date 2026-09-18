@@ -27,6 +27,46 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
+  /* ── Cortina de entrada ────────────────────────────────────────────────
+     Obligatoria (§5 del pliego) y con RETIRADA GARANTIZADA: se quita
+     siempre —sin GSAP, con movimiento reducido, o si algo falla a mitad—,
+     porque si se queda tapa la página entera. `ESPERA` es lo que el hero
+     aguanta antes de entrar, para que el relevo sea limpio.
+     ────────────────────────────────────────────────────────────────────── */
+  var ESPERA = 0;
+  (function cortina() {
+    var el = document.querySelector('[data-cortina]');
+    if (!el) return;
+    var fuera = false;
+    function quitar() { if (fuera) return; fuera = true; el.hidden = true; }
+    if (!motion) { quitar(); return; }
+    ESPERA = 1.35;
+
+    var ladera = el.querySelector('.cortina__ladera');
+    var cresta = el.querySelector('.cortina__cresta');
+    var punto = el.querySelector('.cortina__ciclista');
+    var centro = el.querySelector('.cortina__centro');
+    var largo = cresta.getTotalLength();
+    var avance = { v: 0 };
+    gsap.set(centro, { opacity: 0 });
+    gsap.set(cresta, { strokeDasharray: largo, strokeDashoffset: largo });
+    var tl = gsap.timeline({ onComplete: quitar });
+    tl.to(centro, { opacity: 1, duration: 0.3, ease: 'power2.out' })
+      .to(cresta, { strokeDashoffset: 0, duration: 0.85, ease: 'power1.inOut' }, '-=0.12')
+      .to(avance, {
+        v: 1, duration: 0.85, ease: 'power1.inOut',
+        onUpdate: function () {
+          var p = cresta.getPointAtLength(largo * avance.v);
+          punto.setAttribute('cx', p.x);
+          punto.setAttribute('cy', p.y);
+        }
+      }, '<')
+      .to(centro, { opacity: 0, duration: 0.28, ease: 'power1.in' }, '+=0.08')
+      .to(ladera, { xPercent: 106, duration: 0.95, ease: 'expo.inOut' }, '-=0.18');
+    setTimeout(quitar, 5000);   // red de seguridad: pase lo que pase, se va
+  })();
+
+
   /* ── 1. Scroll suave ─────────────────────────────────────────────────── */
   var lenis = null;
   if (motion && typeof window.Lenis !== 'undefined') {
@@ -200,7 +240,7 @@
       // como píxeles y las letras se quedarían clavadas abajo.
       gsap.set(letras, { y: 0, yPercent: 60, opacity: 0 });
       var comun = { yPercent: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.016 };
-      if (el.closest('.hero')) gsap.to(letras, Object.assign({ delay: 0.15 }, comun));
+      if (el.closest('.hero')) gsap.to(letras, Object.assign({ delay: ESPERA + 0.15 }, comun));
       else alEntrar(el, function () { gsap.to(letras, comun); });
     });
   }
@@ -218,7 +258,7 @@
         var ajustes = {
           opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
           startAt: { y: par[1] },
-          delay: enHero ? 0.5 + i * 0.08 : (i % 4) * 0.05
+          delay: enHero ? ESPERA + 0.5 + i * 0.08 : (i % 4) * 0.05
         };
         if (enHero) gsap.to(el, ajustes);
         else alEntrar(el, function () { gsap.to(el, ajustes); });

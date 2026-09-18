@@ -42,6 +42,17 @@ naranja flúor y verde pino. Ni oscuro-industrial ni editorial.
 
 ## Recursos de movimiento
 
+**0. Cortina de entrada.** **«Perfil de etapa»** — se dibuja el perfil, el punto naranja lo recorre de principio a fin (leyendo el trazado con `getPointAtLength`, no a ojo) y después la ladera barre la pantalla hacia la derecha con su borde curvo por delante.
+
+Es obligatoria en todas las plantillas (§5 del pliego) y está hecha para no dejar la
+página tapada nunca: se retira al terminar la animación, se retira igual si el CDN de
+GSAP no carga, se retira con `prefers-reduced-motion` y hay además un `setTimeout` de
+5 s de red de seguridad. El `display` va en `.cortina:not([hidden])`, nunca en
+`.cortina` a secas —si fuera a secas ganaría al atributo `hidden` y no se iría jamás.
+El hero no entra hasta que la cortina va por la mitad (la constante `ESPERA` de
+`main.js`), para que el relevo se vea como una sola cosa y no como dos animaciones
+pegadas.
+
 1. **Lenis** como único motor de scroll.
 2. **El perfil de la etapa** — el recurso protagonista: tramo hecho, ciclista y lectura
    de km/altitud/pendiente ligados al scroll.
@@ -61,6 +72,10 @@ Medido con `PerformanceObserver` de `longtask` en la pasada de verificación (Ch
 - **0 tareas largas mientras se rueda**: el perfil se repinta en cada scroll pero solo
   escribe un `width` de un rectángulo de recorte y dos propiedades del punto, así que no
   provoca trabajo largo.
+
+- **La cortina no añade tarea larga propia**: en la medición con cortina la tarea de
+  arranque es de **69 ms**, del mismo orden que antes de ponerla, porque el gesto son
+  transformaciones y opacidades, sin `blur` ni sombras por fotograma.
 
 ## Cómo reskinearlo a una tienda real
 
